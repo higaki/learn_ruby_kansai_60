@@ -2,12 +2,16 @@
 
 "No Ruby, No Life".chars
 
-# do something
+puts "No Ruby, No Life.".chars
+  .inject(Hash.new{|h, k| h[k] = 0}){|h, k| h[k] += 1; h}
+  .sort_by{|k, v| [-v, k]}
+  .map{|k, v| "%8d: %s" % [v, k]}
 
 # >>        3:  
 # >>        2: N
 # >>        2: o
 # >>        1: ,
+# >>        1: .
 # >>        1: L
 # >>        1: R
 # >>        1: b
